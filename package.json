@@ -1,0 +1,26 @@
+{
+  "name": "iptype",
+  "author": "no7dw",
+  "private": true,
+  "keywords": [],
+  "dependencies": {
+    "line-by-line": "^0.1.4",
+    "mysql": "^2.9.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-execute": "^0.2.2"
+  },
+  "scripts": {},
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/no7dw/iptype.git"
+  },
+  "license": "",
+  "engines": {
+    "node": "0.10.35",
+    "npm": "2.1.17"
+  }
+}
