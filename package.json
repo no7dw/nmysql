@@ -5,6 +5,7 @@
   "keywords": [],
   "dependencies": {
     "line-by-line": "^0.1.4",
+    "async": "latest",
     "mysql": "^2.9.0"
   },
   "devDependencies": {

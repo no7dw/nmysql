@@ -8,8 +8,8 @@ var con = mysql.createConnection({
   password: "jay"
 });
 
-con.connect(function(err){
-  if(err){
+con.connect(function (err) {
+  if (err) {
     console.log('Error connecting to Db');
     return;
   }
@@ -17,7 +17,7 @@ con.connect(function(err){
   CRUD.run(con);
 });
 
-con.end(function(err) {
+con.end(function (err) {
   // The connection is terminated gracefully
   // Ensures all previously enqueued queries are still
   // before sending a COM_QUIT packet to the MySQL server.
