@@ -6,7 +6,8 @@ var con = mysql.createConnection({
   host: "alij",
   //port : "3306",
   user: "root",
-  password: "root"
+  password: "root",
+  database:'p2p'
 });
 
 con.connect(function (err) {
@@ -15,11 +16,14 @@ con.connect(function (err) {
     return;
   }
   console.log('Connection established');
-  CRUD.run(con);
+  CRUD.run(con, function(err, result){
+    console.log('run end ', err, result);
+    process.exit(0);
+  });
 });
 
-con.end(function (err) {
-  // The connection is terminated gracefully
-  // Ensures all previously enqueued queries are still
-  // before sending a COM_QUIT packet to the MySQL server.
-});
+//con.end(function (err) {
+//  // The connection is terminated gracefully
+//  // Ensures all previously enqueued queries are still
+//  // before sending a COM_QUIT packet to the MySQL server.
+//});

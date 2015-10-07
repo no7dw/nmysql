@@ -61,8 +61,7 @@ module.exports = {
           );
 
         }
-      ],
-      function (err, result) {
+      ],function (err, result) {
         callback(err, result);
       })
   }
