@@ -45,22 +45,22 @@ module.exports = {
           );
         },
         //destroy
-        function (result, cb) {
-          con.query(
-            'DELETE FROM employees WHERE id = ?',
-            [5],
-            function (err, updateResult) {
-              if (err) {
-                console.log('err', err);
-                cb(err);
-              }
-
-              console.log('Deleted ' + updateResult.affectedRows + ' rows');
-              cb(null, updateResult);
-            }
-          );
-
-        }
+        //function (result, cb) {
+        //  con.query(
+        //    'DELETE FROM employees WHERE id = ?',
+        //    [5],
+        //    function (err, updateResult) {
+        //      if (err) {
+        //        console.log('err', err);
+        //        cb(err);
+        //      }
+        //
+        //      console.log('Deleted ' + updateResult.affectedRows + ' rows');
+        //      cb(null, updateResult);
+        //    }
+        //  );
+        //
+        //}
       ],function (err, result) {
         callback(err, result);
       })

@@ -1,6 +1,6 @@
 var mysql = require("mysql");
 var CRUD = require('./crud');
-
+var trans = require('./commit');
 // First you need to create a connection to the db
 var con = mysql.createConnection({
   host: "alij",
@@ -17,9 +17,14 @@ con.connect(function (err) {
   }
   console.log('Connection established');
   CRUD.run(con, function(err, result){
-    console.log('run end ', err, result);
-    process.exit(0);
+    console.log('crud run end ', err, result);
+    trans.run(con, null, function(err, result){
+      console.log('trans run end ', err, result);
+      process.exit(0);
+    });
+
   });
+
 });
 
 //con.end(function (err) {
