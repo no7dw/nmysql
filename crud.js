@@ -9,7 +9,6 @@ module.exports = {
               console.log('err', err);
               cb(err);
             }
-
             console.log('Data received from Db:\n');
             console.log(rows);
             cb(null, rows);
@@ -23,7 +22,6 @@ module.exports = {
               console.log('err', err);
               cb(err);
             }
-
             console.log('Last insert ID:', res.insertId);
             cb(null, res.insertId);
           });
@@ -38,29 +36,27 @@ module.exports = {
                 console.log('err', err);
                 cb(err);
               }
-
               console.log('Changed ' + result.changedRows + ' rows', result);
               cb(null, result);
             }
           );
         },
         //destroy
-        //function (result, cb) {
-        //  con.query(
-        //    'DELETE FROM employees WHERE id = ?',
-        //    [5],
-        //    function (err, updateResult) {
-        //      if (err) {
-        //        console.log('err', err);
-        //        cb(err);
-        //      }
-        //
-        //      console.log('Deleted ' + updateResult.affectedRows + ' rows');
-        //      cb(null, updateResult);
-        //    }
-        //  );
-        //
-        //}
+        function (result, cb) {
+          con.query(
+            'DELETE FROM employees WHERE id = ?',
+            [5],
+            function (err, updateResult) {
+              if (err) {
+                console.log('err', err);
+                cb(err);
+              }
+              console.log('Deleted ' + updateResult.affectedRows + ' rows');
+              cb(null, updateResult);
+            }
+          );
+
+        }
       ],function (err, result) {
         callback(err, result);
       })

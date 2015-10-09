@@ -3,10 +3,10 @@ var CRUD = require('./crud');
 var trans = require('./commit');
 // First you need to create a connection to the db
 var con = mysql.createConnection({
-  host: "alij",
+  host: "alij",//Wade's ali host 120.25.70.243
   //port : "3306",
   user: "root",
-  password: "root",
+  password: "",//password has been changed , ask Wade to get it
   database:'p2p'
 });
 
